@@ -1,8 +1,8 @@
 .header {
-  background-color: #333333;
+  background-color: var(--tertiary-color);
 
   &__wrapper {
-    padding: 10px 50px;
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,24 +10,25 @@
     .header__headline {
       font-size: 36px;
       color: #cccccc;
+      cursor: default;
     }
 
     .header__theme-button {
-      width: 48px;
-      height: 48px;
+      width: 64px;
+      height: 64px;
       color: transparent;
       cursor: pointer;
       border: 0px;
       border-radius: 100%;
-      transition: .5s;
+      transition: 0.5s;
 
       &:hover {
         box-shadow: white 0px 0px 20px;
       }
 
       .header__theme-button-icon {
-        width: 48px;
-        height: 48px;
+        width: 64px;
+        height: 64px;
       }
     }
   }

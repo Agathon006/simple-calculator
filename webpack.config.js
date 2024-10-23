@@ -1,14 +1,21 @@
 "use strict";
 
-export const mode = "production";
-export const entry = "./src/scripts/index.js";
-export const output = {
-  filename: "bundle.js",
-  path: __dirname + "/build",
+let path = require("path");
+
+module.exports = {
+  mode: "production",
+  entry: "./src/scripts/index.js",
+  output: {
+    filename: "bundle.js",
+    path: __dirname + "/build",
+  },
+  watch: true,
+
+  devtool: "source-map",
+
+  devServer: {
+    static: "./",
+  },
+
+  module: {},
 };
-export const watch = true;
-export const devtool = "source-map";
-export const devServer = {
-  static: "./",
-};
-export const module = {};

@@ -20,7 +20,18 @@ export default () => {
   const valueText = document.querySelector("#value");
   const resetText = document.querySelector("#reset-text");
 
+  const plusBtn = document.querySelector("#plusBtn");
+  const minusBtn = document.querySelector("#minusBtn");
+  const multBtn = document.querySelector("#multBtn");
+  const divisionBtn = document.querySelector("#divisionBtn");
+
   document.querySelector("#calc").addEventListener("click", (e) => {
+    
+    divisionBtn.classList.remove('active');
+    multBtn.classList.remove('active');
+    minusBtn.classList.remove('active');
+    plusBtn.classList.remove('active');
+
     switch (e.target.dataset.btn) {
       case "zero":
         state.value = onDigitClick(state.value, "0");
@@ -53,7 +64,7 @@ export default () => {
         state.value = onDigitClick(state.value, "9");
         break;
       case "comma":
-        // onCommaClick(state);
+        // state.value = onCommaClick(state.value);
         break;
       case "reset":
         state.value = 0;
@@ -65,15 +76,19 @@ export default () => {
         // onPercentClick(state);
         break;
       case "division":
+        divisionBtn.classList.add('active');
         // onDivisionClick(state);
         break;
       case "mult":
+        multBtn.classList.add('active');
         // onMultClick(state);
         break;
       case "minus":
+        minusBtn.classList.add('active');
         // onMinusClick(state);
         break;
       case "plus":
+        plusBtn.classList.add('active');
         // onPlusClick(state);
         break;
       case "compute":

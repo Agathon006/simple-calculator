@@ -1,3 +1,5 @@
+"use strict";
+
 export default () => {
   const switchBtn = document.querySelector("#theme-switch");
   const wrapper = document.querySelector(".wrapper");

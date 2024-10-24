@@ -18,6 +18,10 @@
       &:hover {
         filter: brightness(110%);
       }
+
+      @media (max-width: 425px) {
+        font-size: 28px;
+      }
     }
 
     .calc {

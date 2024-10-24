@@ -1,10 +1,7 @@
 @import "../assets/fonts/Inter-Regular/font-inter-regular.css";
 .wrapper {
-  max-width: 1920px;
   width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  margin: 0px auto;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -26,20 +23,50 @@
   --special-color: #6ef1dc;
 }
 
+.active {
+  color: var(--special-color) !important;
+  background-color: var(--text-color) !important;
+}
+
 .header {
   background-color: var(--tertiary-color);
 }
 .header__wrapper {
-  padding: 20px 50px;
+  padding: 20px 320px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 1920px) {
+  .header__wrapper {
+    padding: 20px 50px;
+  }
+}
+@media (max-width: 768px) {
+  .header__wrapper {
+    padding: 20px 30px;
+  }
+}
+@media (max-width: 425px) {
+  .header__wrapper {
+    padding: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .header__wrapper {
+    padding: 10px;
+  }
 }
 .header__wrapper .header__headline {
   font-family: "Inter";
   font-size: 36px;
   color: #cccccc;
   cursor: default;
+}
+@media (max-width: 425px) {
+  .header__wrapper .header__headline {
+    font-size: 28px;
+  }
 }
 .header__wrapper .header__theme-button {
   width: 64px;
@@ -78,6 +105,11 @@
 }
 .main__wrapper button:hover {
   filter: brightness(110%);
+}
+@media (max-width: 425px) {
+  .main__wrapper button {
+    font-size: 28px;
+  }
 }
 .main__wrapper .calc {
   max-width: 640px;
@@ -190,4 +222,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 425px) {
+  .footer__wrapper {
+    padding: 20px 50px 10px;
+  }
 }/*# sourceMappingURL=index.css.map */

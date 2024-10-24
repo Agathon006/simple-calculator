@@ -1,9 +1,6 @@
 .wrapper {
-  max-width: 1920px;
   width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  margin: 0px auto;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -23,4 +20,9 @@
   --secondary-color: #9949be;
   --tertiary-color: #d1cdd3;
   --special-color: #6ef1dc;
+}
+
+.active {
+  color: var(--special-color) !important;
+  background-color: var(--text-color) !important;
 }

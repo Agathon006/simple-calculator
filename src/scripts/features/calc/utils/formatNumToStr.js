@@ -1,6 +1,7 @@
 "use strict";
 
 export default (data) => {
+  if (data === "Error") return data;
   const parts = String(data).split(".");
   const integerPart = parts[0];
   const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, " ");

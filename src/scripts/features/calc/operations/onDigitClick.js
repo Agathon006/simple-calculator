@@ -1,6 +1,6 @@
 "use strict";
 
-export default (state, digit) => {
+export default (state, valueText, digit) => {
   if (
     state.operation === null &&
     typeof state.lastValue === "string" &&
@@ -8,6 +8,7 @@ export default (state, digit) => {
   ) {
     state.lastValue = null;
     state.value = 0;
+    valueText.textContent = "0";
   }
 
   if (
@@ -16,11 +17,19 @@ export default (state, digit) => {
   ) {
     state.lastValue = state.value;
     state.value = 0;
+    valueText.textContent = "0";
   }
 
-  if (state.value === 0) {
-    state.value = +digit;
+  if (
+    valueText.textContent.indexOf(",") !== -1 &&
+    Number.isInteger(state.value)
+  ) {
+    state.value = +(state.value + "." + digit);
   } else {
-    state.value = +(state.value + digit);
+    if (state.value === 0) {
+      state.value = +digit;
+    } else {
+      state.value = +(state.value + digit);
+    }
   }
 };

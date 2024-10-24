@@ -30,37 +30,37 @@ export default () => {
 
     switch (e.target.dataset.btn) {
       case "zero":
-        onDigitClick(state, "0");
+        onDigitClick(state, valueText, "0");
         break;
       case "one":
-        onDigitClick(state, "1");
+        onDigitClick(state, valueText, "1");
         break;
       case "two":
-        onDigitClick(state, "2");
+        onDigitClick(state, valueText, "2");
         break;
       case "three":
-        onDigitClick(state, "3");
+        onDigitClick(state, valueText, "3");
         break;
       case "four":
-        onDigitClick(state, "4");
+        onDigitClick(state, valueText, "4");
         break;
       case "five":
-        onDigitClick(state, "5");
+        onDigitClick(state, valueText, "5");
         break;
       case "six":
-        onDigitClick(state, "6");
+        onDigitClick(state, valueText, "6");
         break;
       case "seven":
-        onDigitClick(state, "7");
+        onDigitClick(state, valueText, "7");
         break;
       case "eight":
-        onDigitClick(state, "8");
+        onDigitClick(state, valueText, "8");
         break;
       case "nine":
-        onDigitClick(state, "9");
+        onDigitClick(state, valueText, "9");
         break;
       case "comma":
-        // onCommaClick(state.value);
+        onCommaClick(state, valueText);
         break;
       case "reset":
         state.value = 0;
@@ -92,7 +92,9 @@ export default () => {
         break;
     }
 
-    valueText.textContent = formatNumToStr(state.value);
+    if (e.target.dataset.btn !== "comma") {
+      valueText.textContent = formatNumToStr(state.value);
+    }
     lastValueText.textContent = formatNumToStr(state.lastValue);
     state.value
       ? (resetText.textContent = "C")

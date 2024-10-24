@@ -4,11 +4,11 @@
 
 ---
 
-## Here you can check out the [tech task](https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?usp=sharing).
+## Task: [link](https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?usp=sharing)
 
 ---
 
-## Launching instruction:
+## How to run the app:
 
 1. Choose your project directory:
    `cd some-folder`

@@ -1,16 +1,50 @@
 "use strict";
 
 export default (state) => {
+  let oldValue = state.value;
   switch (state.operation) {
     case "plus":
-      return state.value + state.value;
+      if (state.lastValue !== null) {
+        state.value = state.lastValue + state.value;
+      } else {
+        state.value = state.value + state.value;
+      }
+      state.lastValue = `${state.lastValue} + ${oldValue} = `;
+      break;
     case "minus":
-      return state.value - state.value;
+      if (state.lastValue !== null) {
+        state.value = state.lastValue - state.value;
+      } else {
+        state.value = state.value - state.value;
+      }
+      state.lastValue = `${state.lastValue} - ${oldValue} = `;
+      break;
     case "mult":
-      return state.value * state.value;
+      if (state.lastValue !== null) {
+        state.value = state.lastValue * state.value;
+      } else {
+        state.value = state.value * state.value;
+      }
+      state.lastValue = `${state.lastValue} * ${oldValue} = `;
+      break;
     case "division":
-      return state.value === 0 ? 'Error' : state.value / state.value;
+      if (state.lastValue !== null) {
+        if (state.lastValue === "Error") {
+          state.value = "Error";
+        } else {
+          state.value = state.lastValue / state.value;
+        }
+      } else {
+        if (state.lastValue === "Error") {
+          state.value = "Error";
+        } else {
+          state.value = state.value / state.value;
+        }
+      }
+      state.lastValue = `${state.lastValue} / ${oldValue} = `;
+      break;
     default:
-      return state.value;
+      break;
   }
+  state.operation = null;
 };

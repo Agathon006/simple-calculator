@@ -11,10 +11,12 @@ import formatNumToStr from "./utils/formatNumToStr.js";
 export default () => {
   const state = {
     value: 0,
+    lastValue: null,
     operation: null,
   };
 
   const valueText = document.querySelector("#value");
+  const lastValueText = document.querySelector("#last-value");
   const resetText = document.querySelector("#reset-text");
 
   const plusBtn = document.querySelector("#plusBtn");
@@ -30,50 +32,41 @@ export default () => {
 
     switch (e.target.dataset.btn) {
       case "zero":
-        state.value = onDigitClick(state.value, "0");
-        state.operation = null;
+        onDigitClick(state, "0");
         break;
       case "one":
-        state.value = onDigitClick(state.value, "1");
-        state.operation = null;
+        onDigitClick(state, "1");
         break;
       case "two":
-        state.value = onDigitClick(state.value, "2");
-        state.operation = null;
+        onDigitClick(state, "2");
         break;
       case "three":
-        state.value = onDigitClick(state.value, "3");
-        state.operation = null;
+        onDigitClick(state, "3");
         break;
       case "four":
-        state.value = onDigitClick(state.value, "4");
-        state.operation = null;
+        onDigitClick(state, "4");
         break;
       case "five":
-        state.value = onDigitClick(state.value, "5");
-        state.operation = null;
+        onDigitClick(state, "5");
         break;
       case "six":
-        state.value = onDigitClick(state.value, "6");
-        state.operation = null;
+        onDigitClick(state, "6");
         break;
       case "seven":
-        state.value = onDigitClick(state.value, "7");
-        state.operation = null;
+        onDigitClick(state, "7");
         break;
       case "eight":
-        state.value = onDigitClick(state.value, "8");
-        state.operation = null;
+        onDigitClick(state, "8");
         break;
       case "nine":
-        state.value = onDigitClick(state.value, "9");
-        state.operation = null;
+        onDigitClick(state, "9");
         break;
       case "comma":
-        // state.value = onCommaClick(state.value);
+        // onCommaClick(state.value);
         break;
       case "reset":
         state.value = 0;
+        state.lastValue = null;
         state.operation = null;
         break;
       case "sign-change":
@@ -95,14 +88,14 @@ export default () => {
         state.operation = "plus";
         break;
       case "compute":
-        state.value = onComputeClick(state);
-        state.operation = null;
+        onComputeClick(state);
         break;
       default:
         break;
     }
 
     valueText.textContent = formatNumToStr(state.value);
+    lastValueText.textContent = formatNumToStr(state.lastValue);
     state.value
       ? (resetText.textContent = "C")
       : (resetText.textContent = "AC");

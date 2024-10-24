@@ -120,12 +120,24 @@
   border: 2px solid black;
   border-radius: 10px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: "value        value         value     value" "reset        sign-change   percent   division" "seven        eight         nine      mult" "four         five          six       minus" "one          two           three     plus" "zero         zero          comma     compute";
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "last-value   last-value    last-value  last-value" "value        value         value       value" "reset        sign-change   percent     division" "seven        eight         nine        mult" "four         five          six         minus" "one          two           three       plus" "zero         zero          comma       compute";
+}
+.main__wrapper .calc__last-value {
+  font-family: "Inter";
+  border-radius: 10px 10px 0 0;
+  padding: 3px 15px;
+  font-size: 28px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #838383;
+  align-self: center;
+  text-align: end;
+  grid-area: last-value;
 }
 .main__wrapper .calc__value {
   font-family: "Inter";
-  border-radius: 10px 10px 0 0;
   padding: 10px 15px;
   font-size: 56px;
   text-overflow: ellipsis;

@@ -86,7 +86,7 @@ export default () => {
         state.operation = "plus";
         break;
       case "compute":
-        onComputeClick(state);
+        onComputeClick(state, lastValueText);
         break;
       default:
         break;

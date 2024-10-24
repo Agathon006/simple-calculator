@@ -2,7 +2,6 @@
 
 import onDigitClick from "./operations/onDigitClick";
 import onCommaClick from "./operations/onCommaClick";
-import onPercentClick from "./operations/onPercentClick";
 import onComputeClick from "./operations/onComputeClick";
 
 import formatNumToStr from "./utils/formatNumToStr.js";
@@ -72,7 +71,7 @@ export default () => {
         state.value = -state.value;
         break;
       case "percent":
-        // onPercentClick(state.value);
+        state.value = state.value / 100;
         break;
       case "division":
         state.operation = "division";

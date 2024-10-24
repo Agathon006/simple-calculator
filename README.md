@@ -18,6 +18,8 @@
    `cd simple-calculator`
 1. Install dependencies:
    `npm i`
+1. Build the app:
+   `npm run build`
 1. Launch the app:
    `npm run start` (The app will open in your web browser)
 

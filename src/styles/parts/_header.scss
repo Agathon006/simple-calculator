@@ -26,7 +26,7 @@
     .header__headline {
       font-family: "Inter";
       font-size: 36px;
-      color: #cccccc;
+      color: var(--text-color);
       cursor: default;
 
       @media (max-width: 425px) {
@@ -44,12 +44,13 @@
       transition: 0.5s;
 
       &:hover {
-        box-shadow: white 0px 0px 20px;
+        box-shadow: var(--text-color) 0px 0px 20px;
       }
 
       .header__theme-button-icon {
         width: 64px;
         height: 64px;
+        border-radius: 100%;
       }
     }
   }

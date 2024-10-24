@@ -2,7 +2,6 @@
 
 import onDigitClick from "./operations/onDigitClick";
 import onCommaClick from "./operations/onCommaClick";
-import onSignChangeClick from "./operations/onSignChangeClick";
 import onPercentClick from "./operations/onPercentClick";
 import onComputeClick from "./operations/onComputeClick";
 
@@ -70,7 +69,7 @@ export default () => {
         state.operation = null;
         break;
       case "sign-change":
-        // onSignChangeClick(state.value);
+        state.value = -state.value;
         break;
       case "percent":
         // onPercentClick(state.value);

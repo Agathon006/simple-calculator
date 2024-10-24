@@ -4,7 +4,7 @@ import onDigitClick from "./operations/onDigitClick.js";
 import onCommaClick from "./operations/onCommaClick.js";
 import onComputeClick from "./operations/onComputeClick.js";
 
-import formatNumToStr from "./utils/formatNumToStr.js";
+import formatNumToStr from "../utils/formatNumToStr.js";
 
 export default () => {
   const state = {

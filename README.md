@@ -4,7 +4,7 @@
 
 ---
 
-## [Task](https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?usp=sharing).
+## Here you can check out the [tech task](https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?usp=sharing).
 
 ---
 
@@ -31,7 +31,7 @@
 
 ## Description of folder structure
 
-### will be here soon...
+### description will be here soon...
 
 ---
 

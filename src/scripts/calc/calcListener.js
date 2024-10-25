@@ -86,27 +86,25 @@ export default () => {
         state.value = state.value / 100;
         break;
       case "division":
-        if (Number.isInteger(state.lastValue) && state.operation !== null) {
+        if (typeof state.lastValue === "number" && state.operation !== null) {
           onComputeClick(state, lastValueText);
         }
         state.operation = "division";
         break;
       case "mult":
-        console.log(state.lastValue);
-        console.log(Number.isInteger(state.lastValue));
-        if (Number.isInteger(state.lastValue) && state.operation !== null) {
+        if (typeof state.lastValue === "number" && state.operation !== null) {
           onComputeClick(state, lastValueText);
         }
         state.operation = "mult";
         break;
       case "minus":
-        if (Number.isInteger(state.lastValue) && state.operation !== null) {
+        if (typeof state.lastValue === "number" && state.operation !== null) {
           onComputeClick(state, lastValueText);
         }
         state.operation = "minus";
         break;
       case "plus":
-        if (Number.isInteger(state.lastValue) && state.operation !== null) {
+        if (typeof state.lastValue === "number" && state.operation !== null) {
           onComputeClick(state, lastValueText);
         }
         state.operation = "plus";

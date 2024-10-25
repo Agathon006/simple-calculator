@@ -56,7 +56,7 @@ export default (state, lastValueText) => {
       } / ${oldValue} = `;
       break;
     default:
-      if (lastValueText !== "") {
+      if (lastValueText.textContent !== "") {
         let repeatedValue = +lastValueText.textContent
           .split(" ")[2]
           .replace(/,/g, ".");

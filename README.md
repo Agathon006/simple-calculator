@@ -25,7 +25,7 @@
 
 ---
 
-## App on vercel(you can try it here):
+## App on vercel (you can try it here):
 
 ### link will be here soon...
 

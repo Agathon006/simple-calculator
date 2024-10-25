@@ -9,7 +9,9 @@ export default (state, lastValueText) => {
       } else {
         state.value = state.value + state.value;
       }
-      state.lastValue = `${state.lastValue} + ${oldValue} = `;
+      state.lastValue = `${
+        state.lastValue === null ? 0 : state.lastValue
+      } + ${oldValue} = `;
       break;
     case "minus":
       if (state.lastValue !== null) {
@@ -17,7 +19,9 @@ export default (state, lastValueText) => {
       } else {
         state.value = state.value - state.value;
       }
-      state.lastValue = `${state.lastValue} - ${oldValue} = `;
+      state.lastValue = `${
+        state.lastValue === null ? 0 : state.lastValue
+      } - ${oldValue} = `;
       break;
     case "mult":
       if (state.lastValue !== null) {
@@ -25,7 +29,9 @@ export default (state, lastValueText) => {
       } else {
         state.value = state.value * state.value;
       }
-      state.lastValue = `${state.lastValue} * ${oldValue} = `;
+      state.lastValue = `${
+        state.lastValue === null ? 0 : state.lastValue
+      } * ${oldValue} = `;
       break;
     case "division":
       if (state.lastValue !== null) {
@@ -41,11 +47,13 @@ export default (state, lastValueText) => {
           state.value = state.value / state.value;
         }
       }
-      state.lastValue = `${state.lastValue} / ${oldValue} = `;
+      state.lastValue = `${
+        state.lastValue === null ? 0 : state.lastValue
+      } / ${oldValue} = `;
       break;
     default:
-      let repeatedValue = +lastValueText.textContent.split(" ")[2];
       if (lastValueText !== "") {
+        let repeatedValue = +lastValueText.textContent.split(" ")[2];
         switch (lastValueText.textContent.split(" ")[1]) {
           case "+":
             state.value += repeatedValue;

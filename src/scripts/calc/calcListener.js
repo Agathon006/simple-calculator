@@ -75,9 +75,12 @@ export default () => {
         onCommaClick(state, valueText);
         break;
       case "reset":
-        state.value = 0;
-        state.lastValue = null;
-        state.operation = null;
+        if (resetText.textContent === "C") {
+          state.value = 0;
+          state.lastValue = null;
+        } else {
+          state.operation = null;
+        }
         break;
       case "sign-change":
         state.value = -state.value;

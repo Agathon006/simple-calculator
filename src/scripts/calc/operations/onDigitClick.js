@@ -22,9 +22,13 @@ export default (state, valueText, digit) => {
 
   if (
     valueText.textContent.indexOf(",") !== -1 &&
-    Number.isInteger(state.value)
+    (Number.isInteger(state.value))
   ) {
-    state.value = +(state.value + "." + digit);
+    if (digit === "0") {
+      valueText.textContent += "0";
+    } else {
+      state.value = +(state.value + "." + valueText.textContent.split(',')[1] + digit);
+    }
   } else {
     if (state.value === 0) {
       state.value = +digit;

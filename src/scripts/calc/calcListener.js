@@ -104,7 +104,12 @@ export default () => {
         break;
     }
 
-    if (e.target.dataset.btn !== "comma") {
+    if (
+      e.target.dataset.btn !== "comma" &&
+      !(
+        e.target.dataset.btn === "zero" && /^[0,]*$/.test(valueText.textContent)
+      )
+    ) {
       valueText.textContent = formatNumToStr(state.value);
     }
     lastValueText.textContent = formatNumToStr(state.lastValue);

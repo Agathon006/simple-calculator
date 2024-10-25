@@ -74,7 +74,6 @@ export default (state, lastValueText) => {
             } - ${repeatedValue} = `;
             break;
           case "*":
-            console.log(repeatedValue);
             state.value *= repeatedValue;
             state.lastValue = `${
               repeatedValue === 0 ? repeatedValue : state.value / repeatedValue

@@ -42,20 +42,20 @@
         "one          two           three       plus"
         "zero         zero          comma       compute";
 
-        &__last-value {
-          font-family: "Inter";
-          border-radius: 10px 10px 0 0;
-          padding: 3px 15px;
-          font-size: 28px;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
-          color: #838383;
-          align-self: center;
-          text-align: end;
-  
-          grid-area: last-value;
-        }
+      &__last-value {
+        font-family: "Inter";
+        border-radius: 10px 10px 0 0;
+        padding: 3px 15px;
+        font-size: 28px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #838383;
+        align-self: center;
+        text-align: end;
+
+        grid-area: last-value;
+      }
 
       &__value {
         font-family: "Inter";
@@ -166,6 +166,26 @@
         background-color: var(--special-color);
         border-radius: 0 0 10px 0;
         grid-area: compute;
+      }
+    }
+
+    .note__wrapper {
+      display: flex;
+      justify-content: center;
+
+      .note {
+        font-family: "Inter";
+        padding-top: 10px;
+        font-size: 14px;
+        color: var(--text-color);
+
+        @media (max-width: 425px) {
+          font-size: 12px;
+        }
+
+        @media (max-width: 320px) {
+          font-size: 10px;
+        }
       }
     }
   }

@@ -228,6 +228,26 @@
   border-radius: 0 0 10px 0;
   grid-area: compute;
 }
+.main__wrapper .note__wrapper {
+  display: flex;
+  justify-content: center;
+}
+.main__wrapper .note__wrapper .note {
+  font-family: "Inter";
+  padding-top: 10px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+@media (max-width: 425px) {
+  .main__wrapper .note__wrapper .note {
+    font-size: 12px;
+  }
+}
+@media (max-width: 320px) {
+  .main__wrapper .note__wrapper .note {
+    font-size: 10px;
+  }
+}
 
 .footer {
   background-color: var(--tertiary-color);

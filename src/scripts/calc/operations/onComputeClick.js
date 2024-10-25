@@ -34,15 +34,11 @@ export default (state, lastValueText) => {
       } * ${oldValue} = `;
       break;
     case "division":
-      if (state.lastValue !== null) {
-        if (state.lastValue === "Error") {
-          state.value = "Error";
-        } else {
-          state.value = state.lastValue / state.value;
-        }
+      if (state.value === 0) {
+        state.value = "Error";
       } else {
-        if (state.lastValue === "Error") {
-          state.value = "Error";
+        if (state.lastValue !== null) {
+          state.value = state.lastValue / state.value;
         } else {
           state.value = state.value / state.value;
         }

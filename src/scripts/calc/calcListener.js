@@ -28,6 +28,18 @@ export default () => {
     minusBtn.classList.remove("active");
     plusBtn.classList.remove("active");
 
+    if (valueText.textContent === "Error") {
+      state.value = 0;
+      state.lastValue = null;
+      state.operation = null;
+      valueText.textContent = formatNumToStr(state.value);
+      lastValueText.textContent = formatNumToStr(state.lastValue);
+      state.value
+        ? (resetText.textContent = "C")
+        : (resetText.textContent = "AC");
+      return;
+    }
+
     switch (e.target.dataset.btn) {
       case "zero":
         onDigitClick(state, valueText, "0");

@@ -31,9 +31,23 @@
 
 ---
 
-## Description of folder structure
+## Folder Structure
 
-### description will be here soon...
+- The `build` folder stores optimized project files (general script and its source map)
+- The `src` folder is the main source code directory of the project
+  - The `assets` folder stores all the static assets used in the project
+    - The `fonts` folder contains fonts for app
+      - The `Inter` folder contains fonts files for Inter-Regular font (.css, .eot, .otf, .svg, .ttf, .woff, .woff2)
+    - The `icons` holds app icon file (.ico)
+    - The `images` stores any other images used in the project (.svg, .png)
+  - The `scripts` folder stores all the application styles (.js)
+    - The `calc` sub-folder specifically is for calculator-related logic (.js)
+      - The `operations` folder contains modules for various calculator operations (.js)
+    - The `theme` folder stores scripts for handling theme switching functionality (.js)
+    - The `utils` folder contains utility functions (.js)
+  - The `styles` folder holds all the CSS files (.css, .scss, .css.map)
+    - The `parts` contains CSS files for specific sections or components. (.css, .scss, .css.map)
+    - The `template` folder holds general CSS files for app template, including reset.css (.css, .scss, .css.map)
 
 ---
 

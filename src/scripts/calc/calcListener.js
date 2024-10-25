@@ -75,12 +75,9 @@ export default () => {
         onCommaClick(state, valueText);
         break;
       case "reset":
-        if (resetText.textContent === "C") {
-          state.value = 0;
-          state.lastValue = null;
-        } else {
-          state.operation = null;
-        }
+        state.value = 0;
+        state.lastValue = null;
+        if (resetText.textContent === "AC") state.operation = null;
         break;
       case "sign-change":
         state.value = -state.value;
@@ -89,15 +86,29 @@ export default () => {
         state.value = state.value / 100;
         break;
       case "division":
+        if (Number.isInteger(state.lastValue) && state.operation !== null) {
+          onComputeClick(state, lastValueText);
+        }
         state.operation = "division";
         break;
       case "mult":
+        console.log(state.lastValue);
+        console.log(Number.isInteger(state.lastValue));
+        if (Number.isInteger(state.lastValue) && state.operation !== null) {
+          onComputeClick(state, lastValueText);
+        }
         state.operation = "mult";
         break;
       case "minus":
+        if (Number.isInteger(state.lastValue) && state.operation !== null) {
+          onComputeClick(state, lastValueText);
+        }
         state.operation = "minus";
         break;
       case "plus":
+        if (Number.isInteger(state.lastValue) && state.operation !== null) {
+          onComputeClick(state, lastValueText);
+        }
         state.operation = "plus";
         break;
       case "compute":

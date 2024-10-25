@@ -4,47 +4,47 @@ export default (state, lastValueText) => {
   let oldValue = state.value;
   switch (state.operation) {
     case "plus":
-      if (state.lastValue !== null) {
+      if (state.lastValue !== null && Number.isInteger(state.lastValue)) {
         state.value = state.lastValue + state.value;
       } else {
-        state.value = state.value + state.value;
+        state.value = 0 + state.value;
       }
       state.lastValue = `${
-        state.lastValue === null ? 0 : state.lastValue
+        state.lastValue === null || !Number.isInteger(state.lastValue) ? 0 : state.lastValue
       } + ${oldValue} = `;
       break;
     case "minus":
-      if (state.lastValue !== null) {
+      if (state.lastValue !== null && Number.isInteger(state.lastValue)) {
         state.value = state.lastValue - state.value;
       } else {
-        state.value = state.value - state.value;
+        state.value = 0 - state.value;
       }
       state.lastValue = `${
-        state.lastValue === null ? 0 : state.lastValue
+        state.lastValue === null || !Number.isInteger(state.lastValue) ? 0 : state.lastValue
       } - ${oldValue} = `;
       break;
     case "mult":
-      if (state.lastValue !== null) {
+      if (state.lastValue !== null && Number.isInteger(state.lastValue)) {
         state.value = state.lastValue * state.value;
       } else {
-        state.value = state.value * state.value;
+        state.value = 0 * state.value;
       }
       state.lastValue = `${
-        state.lastValue === null ? 0 : state.lastValue
+        state.lastValue === null || !Number.isInteger(state.lastValue) ? 0 : state.lastValue
       } * ${oldValue} = `;
       break;
     case "division":
       if (state.value === 0) {
         state.value = "Error";
       } else {
-        if (state.lastValue !== null) {
+        if (state.lastValue !== null && Number.isInteger(state.lastValue)) {
           state.value = state.lastValue / state.value;
         } else {
-          state.value = state.value / state.value;
+          state.value = 0 / state.value;
         }
       }
       state.lastValue = `${
-        state.lastValue === null ? 0 : state.lastValue
+        state.lastValue === null || !Number.isInteger(state.lastValue) ? 0 : state.lastValue
       } / ${oldValue} = `;
       break;
     default:

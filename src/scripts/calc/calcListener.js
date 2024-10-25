@@ -5,6 +5,7 @@ import onCommaClick from "./operations/onCommaClick.js";
 import onComputeClick from "./operations/onComputeClick.js";
 
 import formatNumToStr from "../utils/formatNumToStr.js";
+import switchLockCalc from "../utils/switchLockCalc.js";
 
 export default () => {
   const state = {
@@ -27,18 +28,6 @@ export default () => {
     multBtn.classList.remove("active");
     minusBtn.classList.remove("active");
     plusBtn.classList.remove("active");
-
-    if (valueText.textContent === "Error") {
-      state.value = 0;
-      state.lastValue = null;
-      state.operation = null;
-      valueText.textContent = formatNumToStr(state.value);
-      lastValueText.textContent = formatNumToStr(state.lastValue);
-      state.value
-        ? (resetText.textContent = "C")
-        : (resetText.textContent = "AC");
-      return;
-    }
 
     switch (e.target.dataset.btn) {
       case "zero":
@@ -78,6 +67,7 @@ export default () => {
         state.value = 0;
         state.lastValue = null;
         if (resetText.textContent === "AC") state.operation = null;
+        if (valueText.textContent === "Error") switchLockCalc();
         break;
       case "sign-change":
         state.value = -state.value;

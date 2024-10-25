@@ -1,5 +1,7 @@
 "use strict";
 
+import switchLockCalc from "../../utils/switchLockCalc.js";
+
 export default (state, lastValueText) => {
   let oldValue = state.value;
   switch (state.operation) {
@@ -42,6 +44,7 @@ export default (state, lastValueText) => {
     case "division":
       if (state.value === 0) {
         state.value = "Error";
+        switchLockCalc();
       } else {
         if (state.lastValue !== null && typeof state.lastValue === "number") {
           state.value = state.lastValue / state.value;

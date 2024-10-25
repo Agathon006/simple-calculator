@@ -28,3 +28,8 @@
   color: var(--special-color) !important;
   background-color: var(--text-color) !important;
 }
+
+.lock {
+  filter: brightness(50%) !important;
+  pointer-events: none;
+}

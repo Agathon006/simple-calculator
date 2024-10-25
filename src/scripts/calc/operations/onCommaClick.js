@@ -9,6 +9,13 @@ export default (state, valueText) => {
     state.lastValue = null;
     state.value = 0;
     valueText.textContent = "0,";
+  } else if (
+    state.operation &&
+    (state.lastValue === null || typeof state.lastValue === "string")
+  ) {
+    state.lastValue = state.value;
+    state.value = 0;
+    valueText.textContent = "0,";
   } else {
     if (valueText.textContent.indexOf(",") === -1) valueText.textContent += ",";
   }

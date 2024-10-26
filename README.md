@@ -25,11 +25,11 @@
 
 ---
 
-## App on vercel (you can try it here):
+## App on Vercel (you can try it here):
 
-### [link](https://simple-calculator-dusky-sigma.vercel.app/)
+### [link](https://simple-calculator-dusky-sigma.vercel.app/ "Open Calculator in a new tab")
 
-![app](image.png)
+[![app](image.png)](https://simple-calculator-dusky-sigma.vercel.app/ "Open Calculator in a new tab") 
 
 ---
 

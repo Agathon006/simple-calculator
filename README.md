@@ -27,7 +27,9 @@
 
 ## App on vercel (you can try it here):
 
-### link will be here soon...
+### [link](https://simple-calculator-dusky-sigma.vercel.app/)
+
+![app](image.png)
 
 ---
 

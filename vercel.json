@@ -3,8 +3,13 @@
   "builds": [
     {
       "src": "src/scripts/index.js",
-      "use": "@vercel/static-build",
-      "output": "build"
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }

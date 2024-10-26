@@ -27,9 +27,9 @@
 
 ## App on Vercel (you can try it here):
 
-### [link](https://simple-calculator-dusky-sigma.vercel.app/ "Open Calculator in a new tab")
+### [link](https://simple-calculator-dusky-sigma.vercel.app/)
 
-[![app](image.png)](https://simple-calculator-dusky-sigma.vercel.app/ "Open Calculator in a new tab") 
+[![app](image.png)](https://simple-calculator-dusky-sigma.vercel.app/) 
 
 ---
 
